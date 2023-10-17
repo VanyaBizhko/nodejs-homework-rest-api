@@ -12,7 +12,7 @@ const addShcema = Joi.object({
   }),
     phone: Joi.string().required().messages({
     'any.required': 'Phone number is required. Please provide a phone number.',
-  }),
+  }),favorite: Joi.boolean()
 });
 module.exports = {
   addShcema,

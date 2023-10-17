@@ -13,6 +13,9 @@ router.post('/',validate(schema.addShcema), cntrl.addContact)
 
 router.delete('/:id', cntrl.removeContact)
 
-router.put('/:id',validate(schema.addShcema), cntrl.updateContact)
+router.put('/:id', validate(schema.addShcema), cntrl.updateContact)
+
+router.patch('/:id/favorite',  cntrl.updateFavorite)
+
 
 module.exports = router
