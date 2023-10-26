@@ -1,6 +1,8 @@
 const HttpError = require('./HttpError')
-const cntrlWrapper = require ("./cntrlWrapper")
+const cntrlWrapper = require("./cntrlWrapper")
+const handleMongooseModel = require("./handleMongooseModel")
 module.exports = {
     HttpError,
-    cntrlWrapper
+    cntrlWrapper,
+    handleMongooseModel
 }
