@@ -15,12 +15,17 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
+  avatarURL: {
+    type: String,
+    required: true, 
+  },
   subscription: {
     type: String,
     enum: ["starter", "pro", "business"],
     default: "starter",
   },
   token: String,
+  
 });
 userSchema.post("save", handleMongooseModel);
 
