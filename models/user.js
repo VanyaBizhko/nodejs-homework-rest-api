@@ -19,6 +19,15 @@ const userSchema = new Schema({
     type: String,
     required: true, 
   },
+  verify: {
+    type: Boolean,
+    default: false,
+  },
+  veryficationCode: {
+    type: String,
+    default: ''
+
+  },
   subscription: {
     type: String,
     enum: ["starter", "pro", "business"],
@@ -34,6 +43,11 @@ const registerSchema = Joi.object({
   email: Joi.string().required(),
   password: Joi.string().required(),
 });
+const emailSchema = Joi.object({
+  email: Joi.string().required(),
+})
+
+
 const loginSchema = Joi.object({
   email: Joi.string().required(),
   password: Joi.string().required(),
@@ -41,7 +55,9 @@ const loginSchema = Joi.object({
 
 const schemas = {
   registerSchema,
+  emailSchema,
   loginSchema,
+  
 };
 
 const User = model("user", userSchema);
